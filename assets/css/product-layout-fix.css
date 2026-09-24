@@ -1,0 +1,2 @@
+.product-detail,.product-content,.related-section{width:min(1160px,calc(100% - 40px));margin-inline:auto}
+@media(max-width:800px){.product-detail,.product-content,.related-section{width:min(100% - 32px,600px)}}

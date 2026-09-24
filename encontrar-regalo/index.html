@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Encuentra tu regalo de Adviento | Adviento.es</title>
+    <meta name="description" content="Filtra y descubre regalos de Adviento según gustos y presupuesto.">
+    <link rel="canonical" href="https://adviento.es/encontrar-regalo/">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+  </head>
+  <body class="finder-page">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../">
+          <span class="brand-mark">✦</span>
+          <span>adviento<span class="brand-dot">.</span>es</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span>
+          </span>
+          <span>
+          </span>
+          <span>
+          </span>
+          <span class="sr-only">Abrir menú</span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
+          <a href="../calendarios-de-adviento/">Calendarios</a>
+          <a href="../regalos-de-adviento/">Regalos</a>
+          <a href="../24-dias-de-adviento/">24 días</a>
+          <a href="../adviento/">Guías</a>
+          <a class="nav-finder" href="./">Encuentra tu regalo →</a>
+        </nav>
+      </div>
+    </header>
+    <main id="contenido">
+      <section class="finder-intro">
+        <div class="container">
+          <p class="eyebrow">Tu búsqueda empieza aquí</p>
+          <h1>Encuentra un regalo<br>
+            <em>hecho para esa persona.</em>
+          </h1>
+          <p>Responde a unas preguntas o explora todos los resultados. Puedes cambiar los filtros en cualquier momento.</p>
+        </div>
+      </section>
+      <section class="finder-tool section">
+        <div class="container finder-layout">
+          <aside class="filter-panel" aria-label="Filtros de búsqueda">
+            <div class="filter-heading">
+              <h2>Filtrar selección</h2>
+              <button id="clear-filters" type="button">Limpiar</button>
+            </div>
+            <fieldset>
+              <legend>¿Para quién?</legend>
+              <label>
+                <input type="radio" name="audience" value="todos" checked>Cualquiera</label>
+                <label>
+                  <input type="radio" name="audience" value="ninos">Niños</label>
+                  <label>
+                    <input type="radio" name="audience" value="adultos">Adultos</label>
+                    <label>
+                      <input type="radio" name="audience" value="parejas">Parejas</label>
+                      <label>
+                        <input type="radio" name="audience" value="familias">Familias</label>
+                      </fieldset>
+                      <fieldset>
+                        <legend>¿Qué le gusta?</legend>
+                        <label>
+                          <input type="radio" name="category" value="todas" checked>Cualquier estilo</label>
+                          <label>
+                            <input type="radio" name="category" value="manualidades">Crear y hacer</label>
+                            <label>
+                              <input type="radio" name="category" value="belleza">Belleza y calma</label>
+                              <label>
+                                <input type="radio" name="category" value="gourmet">Comer y disfrutar</label>
+                                <label>
+                                  <input type="radio" name="category" value="juguetes">Jugar y construir</label>
+                                  <label>
+                                    <input type="radio" name="category" value="originales">Algo original</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <legend>Presupuesto máximo</legend>
+                                    <label>
+                                      <input type="radio" name="price" value="0" checked>Sin límite</label>
+                                      <label>
+                                        <input type="radio" name="price" value="20">Hasta 20 €</label>
+                                        <label>
+                                          <input type="radio" name="price" value="30">Hasta 30 €</label>
+                                          <label>
+                                            <input type="radio" name="price" value="50">Hasta 50 €</label>
+                                          </fieldset>
+                                        </aside>
+                                        <div class="results-area">
+                                          <div class="results-header">
+                                            <p id="results-count" aria-live="polite">Cargando regalos…</p>
+                                            <label class="search-field">
+                                              <span class="sr-only">Buscar por nombre</span>
+                                              <input id="search-products" type="search" placeholder="Buscar…">
+                                            </label>
+                                          </div>
+                                          <div id="product-results" class="product-grid" aria-live="polite">
+                                          </div>
+                                          <p id="no-results" class="no-results" hidden>No hemos encontrado una combinación exacta. Prueba a quitar algún filtro.</p>
+                                          <noscript>
+                                            <p class="no-results">Activa JavaScript para utilizar los filtros. Consulta <a href="../regalos-de-adviento/">todos los regalos</a>.</p>
+                                          </noscript>
+                                        </div>
+                                      </div>
+                                    </section>
+                                  </main>
+                                  <footer class="site-footer">
+                                    <div class="container footer-grid">
+                                      <div>
+                                        <a class="brand brand-footer" href="../">
+                                          <span class="brand-mark">✦</span>
+                                          <span>adviento<span class="brand-dot">.</span>es</span>
+                                        </a>
+                                        <p>La magia empieza antes de Navidad.</p>
+                                      </div>
+                                      <div>
+                                        <h2>Descubre</h2>
+                                        <a href="../calendarios-de-adviento/">Calendarios</a>
+                                        <a href="../regalos-de-adviento/">Regalos</a>
+                                      </div>
+                                      <div>
+                                        <h2>Sobre Adviento.es</h2>
+                                        <a href="../sobre-nosotros/">Quiénes somos</a>
+                                        <a href="../contacto/">Contacto</a>
+                                        <a href="../privacidad/">Privacidad</a>
+                                        <a href="../aviso-legal/">Aviso legal</a>
+                                      </div>
+                                    </div>
+                                    <div class="container footer-bottom">
+                                      <span>© 2026 Adviento.es</span>
+                                      <span>Este sitio puede contener enlaces de afiliación.</span>
+                                    </div>
+                                  </footer>
+                                  <script src="../assets/js/main.js" defer>
+                                  </script>
+                                  <script src="../assets/js/finder.js" defer>
+                                  </script>
+                                </body>
+                              </html>
