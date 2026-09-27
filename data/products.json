@@ -268,30 +268,6 @@
     "affiliateUrl": "https://www.amazon.es/dp/B0CYT9MY3K?tag=adviento.es-21&linkCode=osi&th=1&psc=1"
   },
   {
-    "id": "B07R6MHNMB",
-    "type": "calendario",
-    "name": "VAHDAM Set Regalo De Té De Lujo | 24 Variedades En Latas",
-    "title": "VAHDAM Set Regalo De Té De Lujo | 24…",
-    "subtitle": "Sabores especiales para la espera.",
-    "heading": "Una forma deliciosa de contar los días.",
-    "category": "gourmet",
-    "categoryLabel": "Comer y disfrutar",
-    "audience": "adultos",
-    "price": 46.17,
-    "priceDisplay": "46,17 €",
-    "imageUrl": "https://m.media-amazon.com/images/I/514teysif4L._SL160_.jpg",
-    "tags": [
-      "gourmet",
-      "adultos",
-      "calendario",
-      "de",
-      "adviento",
-      "gourmet"
-    ],
-    "description": "SET DE REGALO CON 24 TÉS – 24 variedades de té verde, chai, infusiones, té negro, té blanco y oolong de hoja suelta. · EN LATAS DORADAS – Presentado en una caja de regalo premium; ideal para los amantes del té. · LA MARCA VAHDAM – VAHDAM lleva tés, especias y hierbas a los amantes del té de todo el mundo. Hoy, VAHDAM llega a más de 3 millones de clientes en más de 130 países, con té negro, té verde, té oolong y té blanco, además de mezclas de chai e infusiones. · ENVASADO FRESCO – Las hojas de té se envasan pocos días después de la cosecha, para que el aroma y el sabor se conserven hasta la taza. · ENVASADO PARA LA FRESCURA – Cada envase está diseñado para proteger las hojas de té del aire, la luz y la humedad. Según el formato, resellable o sellado al vacío, para conservar el aroma y el sabor hasta la última taza.",
-    "affiliateUrl": "https://www.amazon.es/dp/B07R6MHNMB?tag=adviento.es-21&linkCode=osi&th=1&psc=1"
-  },
-  {
     "id": "B0B2TFMN1L",
     "type": "calendario",
     "name": "Milka Oreo Calendario de Adviento Chocolate Leche y Cacao, Especial Navidad, 284g",
@@ -340,30 +316,6 @@
     "affiliateUrl": "https://www.amazon.es/dp/B01IHIE2LY?tag=adviento.es-21&linkCode=osi&th=1&psc=1"
   },
   {
-    "id": "B01N97B1EQ",
-    "type": "calendario",
-    "name": "M&M's & Friends Calendario de Adviento Chocolates Surtidos 361g",
-    "title": "M&M's & Friends Calendario de Adviento Chocolates Surtidos 361g",
-    "subtitle": "Un clásico dulce para diciembre.",
-    "heading": "Pequeñas sorpresas para los más golosos.",
-    "category": "chocolate",
-    "categoryLabel": "Chocolate",
-    "audience": "familias",
-    "price": 14.08,
-    "priceDisplay": "14,08 €",
-    "imageUrl": "https://m.media-amazon.com/images/I/51Is1z42t6L._SL160_.jpg",
-    "tags": [
-      "chocolate",
-      "familias",
-      "calendario",
-      "de",
-      "adviento",
-      "chocolate"
-    ],
-    "description": "M&Ms facilita disfrutar todos tus chocolates favoritos a la vez. Hay un chocolate perfecto para cada persona, cubriendo los gustos y necesidades de todos tus amigos. · Envueltos individualmente y en miniatura, son el centro de mesa perfecto para todas las ocasiones. · Siempre encontrarás un mínimo de 4 marcas en tu calendario de Adviento, asegurando la variedad y el disfrute de todos tus invitados. · Un placer para disfrutar como parte de una dieta equilibrada · \"M&M’s es una marca conocida por todos con 75 años de edad. Esa inteligente estrategia de recubrir el chocolate, se ha convertido en un icono que ha ido evolucionando hacia varios sabores, como el clásico de cacahuete, solo de chocolate, hasta la versión crispy, de arroz inflado. M&M’s es capaz de aportar ese punto de diversión a tu día, con su formato ideal para compartir y acercarse a los demás.\"",
-    "affiliateUrl": "https://www.amazon.es/dp/B01N97B1EQ?tag=adviento.es-21&linkCode=osi&th=1&psc=1"
-  },
-  {
     "id": "B0B466H784",
     "type": "calendario",
     "name": "kinder & Ferrero Calendario de Adviento – Calendario de Adviento con deliciosas especialidades de chocolate – 1 calendario de 295 g",
@@ -386,6 +338,30 @@
     ],
     "description": "El calendario de Adviento de Kinder & Ferrero endulza con muchas pequeñas sorpresas la temporada de Adviento y proporciona una emocionante diversidad en la época prenavideña · Ob für Kinder oder Erwachsene - der Adventskalender ist mit Türchen auf allen vier Seiten ein besonderer Hingucker auf dem weihnachtlichen Tisch · Desde Kinder Country hasta Kinder bueno hasta la clásica barra Kinder – con una colorida mezcla de aperitivos de Kinder & Ferrero el calendario cautivará a cualquier fan del chocolate en Navidad · Pequeñas golosinas para la pequeña alegría entre: el delicioso chocolate y el diseño navideño hacen que el tiempo hasta la Nochebuena sea aún más hermoso · Contenido del envío: 1 calendario de Adviento Kinder & Ferrero de 295 g, incluye 3 barritas Kinder 2 Tronky, 2 Kinder Country, 2 duplo, 6 Hanuta Mini, 6 Kinder bueno mini, 3 Kinder bueno mini blanco",
     "affiliateUrl": "https://www.amazon.es/dp/B0B466H784?tag=adviento.es-21&linkCode=osi&th=1&psc=1"
+  },
+  {
+    "id": "B0CMY43CPT",
+    "type": "calendario",
+    "name": "Calendario de Adviento Kinder Casa 2025 · Con 24 Chocolatinas y 1 Kinder Huevo Sorpresa · Incluye Tarjeta Personalizada Exclusiva Cia&Co · Detalle de Navidad Original para Niños y Familia 184 grs",
+    "title": "Calendario de Adviento Kinder Casa 2025 · Con 24…",
+    "subtitle": "Un clásico dulce para diciembre.",
+    "heading": "Pequeñas sorpresas para los más golosos.",
+    "category": "chocolate",
+    "categoryLabel": "Chocolate",
+    "audience": "familias",
+    "price": 18.61,
+    "priceDisplay": "18,61 €",
+    "imageUrl": "https://m.media-amazon.com/images/I/51ooHZk5o3L._SL160_.jpg",
+    "tags": [
+      "chocolate",
+      "familias",
+      "calendario",
+      "de",
+      "adviento",
+      "chocolate"
+    ],
+    "description": "🍫 【SURTIDO DE CHOCOLATES KINDER】 – Redescubre los sabores más queridos de Kinder: Chocolate clásico, Schoko-Bons, Mini Kinder Bueno y el famoso Kinder Huevo. Cada día disfrutarás un detalle diferente, combinando la cremosidad de la leche con el toque inconfundible de Kinder. Un calendario premium que une tradición, calidad y placer en cada bocado, pensado para disfrutar y regalar en familia. · 💌 【INCLUYE TARJETA PERSONALIZADA Cia&Co】 – Incluye una Tarjeta con el mensaje “Deseo que te guste” o el texto personalizado que elijas. Nosotros lo imprimimos y añadimos a tu pedido. Una manera sencilla de transformar un dulce detalle en un regalo único, pensado para emocionar. Perfecto para Niños, Amigos, Profesores, Clientes o Colaboradores durante la temporada navideña. · ✨ 【UNA EXPERIENCIA SENSORIAL Y EMOTIVA】 – Desde el momento de abrirlo hasta el último chocolate, el Calendario Kinder Casa ofrece una experiencia completa: aroma de cacao, suavidad de la leche y textura crujiente. Cada chocolatina despierta sonrisas y crea pequeños momentos de felicidad compartida. Ideal para llenar de magia el hogar, la oficina o el rincón más especial de Navidad. · 🎁 【DETALLE ORIGINAL PARA NIÑOS Y ADULTOS】 – Aunque pensado para los más pequeños, también encanta a quienes conservan el espíritu infantil. Un regalo perfecto para toda la familia, para empresas que desean agradecer con dulzura o para amigos que disfrutan de los sabores de siempre. Su formato de casa navideña y su surtido variado lo hacen inolvidable. · 🎅 【EDICIÓN LIMITADA NAVIDAD 2025】 – Creado especialmente para esta temporada. Combina el diseño alegre de Kinder con el cuidado de presentación de Cia&Co. Ideal para regalar o coleccionar, este calendario es sinónimo de tradición, ternura y celebración. Fabricado con ingredientes de calidad y sin alcohol, apto para toda la familia. · 📦 【PREPARACIÓN CUIDADA Y ENVÍO LISTO PARA REGALAR】 – Cada unidad se prepara con esmero por el equipo Cia&Co y se envía protegida para que llegue en perfecto estado. Perfecto para regalos a distancia o detalles de empresa. Garantía de calidad, presentación impecable para emocionar desde el primer instante.",
+    "affiliateUrl": "https://www.amazon.es/dp/B0CMY43CPT?tag=adviento.es-21&linkCode=osi&th=1&psc=1"
   },
   {
     "id": "B0HJH19T9L",
