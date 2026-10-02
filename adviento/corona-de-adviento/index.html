@@ -57,54 +57,57 @@
 
         <section id="esquema-interactivo" data-advent-wreath lang="es" aria-label="Esquema interactivo de la Corona de Adviento">
           <style>
-        [data-advent-wreath] { margin:2.5rem 0; container-type:inline-size; container-name:advent-wreath; color:#111; font-family:inherit; }
-        [data-advent-wreath] *, [data-advent-wreath] *::before, [data-advent-wreath] *::after { box-sizing:border-box; }
-        [data-advent-wreath] .aw-card { background:#fafafa; border:1px solid #eaeaea; border-radius:16px; padding:2rem 1.5rem; box-shadow:0 4px 20px #00000008; }
-        [data-advent-wreath] .aw-title { margin:0 0 .3rem; padding:0; border:0; font-family:inherit; font-size:1.6rem; line-height:1.25; font-weight:700; color:#000; }
-        [data-advent-wreath] .aw-subtitle { margin:0; font-size:.95rem; line-height:1.5; color:#666; }
-        [data-advent-wreath] button { font-family:inherit; cursor:pointer; touch-action:manipulation; -webkit-tap-highlight-color:transparent; }
-        [data-advent-wreath] button:focus-visible { outline:3px solid #2563eb; outline-offset:3px; }
-        [data-advent-wreath] .aw-progress { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; margin:1.2rem 0 1.5rem; }
-        [data-advent-wreath] .aw-progress-label { font-size:.9rem; font-style:italic; color:#666; margin-right:.3rem; }
-        [data-advent-wreath] .aw-filter { border:0; border-radius:20px; min-height:44px; padding:.5rem 1rem; font-size:.85rem; font-weight:500; background:#f3f4f6; color:#374151; }
-        [data-advent-wreath] .aw-filter.is-active { background:#dbeafe; color:#1d4ed8; font-weight:600; }
-        [data-advent-wreath] .aw-layout { display:grid; grid-template-columns:minmax(0,1fr); gap:1.5rem; align-items:center; }
-        [data-advent-wreath] .aw-illustration { margin:0; background:#f0f0f0; border-radius:12px; padding:1.5rem; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:260px; }
-        [data-advent-wreath] .aw-scene { position:relative; width:100%; max-width:220px; aspect-ratio:1; }
-        [data-advent-wreath] .aw-scene svg { display:block; width:100%; height:auto; pointer-events:none; }
-        [data-advent-wreath] .aw-hit { position:absolute; padding:0; border:0; background:transparent; border-radius:9px; z-index:2; }
-        [data-advent-wreath] .aw-hit:hover, [data-advent-wreath] .aw-hit.is-selected { box-shadow:0 0 0 2px #2563eb80; }
-        [data-advent-wreath] .aw-base { inset:12% 8% 8%; border-radius:50%; z-index:1; }
-        [data-advent-wreath] .aw-candle { width:22%; height:31%; }
-        [data-advent-wreath] .aw-candle[data-item="week1"] { left:18%; top:16%; }
-        [data-advent-wreath] .aw-candle[data-item="week2"] { left:60%; top:16%; }
-        [data-advent-wreath] .aw-candle[data-item="week3"] { left:13%; top:46%; }
-        [data-advent-wreath] .aw-candle[data-item="week4"] { left:65%; top:46%; }
-        [data-advent-wreath] [data-flame] { transition:opacity .18s; }
-        [data-advent-wreath] .aw-caption { margin:.8rem 0 0; color:#666; font-size:.78rem; line-height:1.5; font-style:italic; text-align:center; }
-        [data-advent-wreath] .aw-status { display:block; margin-top:.35rem; font-style:normal; font-weight:600; color:#555; }
-        [data-advent-wreath] .aw-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; }
-        [data-advent-wreath] .aw-tile { display:block; width:100%; min-width:0; min-height:100px; background:#f3f3f3; border:1.5px solid transparent; border-radius:10px; padding:.9rem; color:#111; text-align:left; }
-        [data-advent-wreath] .aw-tile:hover { background:#fff; border-color:#b9c9e3; }
-        [data-advent-wreath] .aw-tile.is-selected { background:#fff; border-color:#2563eb; box-shadow:0 2px 8px #2563eb14; }
-        [data-advent-wreath] .aw-tile.is-future { opacity:.72; }
-        [data-advent-wreath] .aw-tile-top { display:flex; justify-content:space-between; align-items:center; gap:.3rem; margin-bottom:.2rem; font-size:.8rem; font-style:italic; color:#666; }
-        [data-advent-wreath] .aw-dot { flex:0 0 8px; height:8px; border-radius:50%; background:#7e22ce; }
-        [data-advent-wreath] .aw-dot-rose { background:#db2777; }
-        [data-advent-wreath] .aw-dot-green { background:#15803d; }
-        [data-advent-wreath] .aw-tile strong { display:block; font-size:.92rem; line-height:1.4; margin-bottom:.1rem; overflow-wrap:break-word; }
-        [data-advent-wreath] .aw-tile-label { font-size:.82rem; line-height:1.4; color:#666; font-family:monospace; }
-        [data-advent-wreath] .aw-base-label { font-style:italic; font-family:inherit; }
-        [data-advent-wreath] .aw-detail { margin-top:1.5rem; padding-left:1.2rem; border-left:4px solid #7e22ce; }
-        [data-advent-wreath] .aw-detail-header { display:flex; justify-content:space-between; align-items:baseline; gap:.5rem; flex-wrap:wrap; margin-bottom:.3rem; }
-        [data-advent-wreath] .aw-detail-title { margin:0; color:#000; font-family:inherit; font-size:1.15rem; line-height:1.4; font-weight:700; }
-        [data-advent-wreath] .aw-detail-label { font-size:.85rem; font-family:monospace; color:#666; }
-        [data-advent-wreath] .aw-detail-text { margin:0; font-size:.92rem; color:#555; line-height:1.6; }
-        @container advent-wreath (min-width:580px) { [data-advent-wreath] .aw-layout { grid-template-columns:minmax(0,1fr) minmax(0,1fr); } }
-        @container advent-wreath (max-width:360px) { [data-advent-wreath] .aw-card { padding:1.25rem .9rem; } [data-advent-wreath] .aw-tile { padding:.7rem; } }
-        @media (prefers-reduced-motion:reduce) { [data-advent-wreath] [data-flame] { transition:none; } }
-        @media (forced-colors:active) { [data-advent-wreath] .is-active, [data-advent-wreath] .is-selected { outline:2px solid Highlight; } }
-        </style>
+            [data-advent-wreath] { margin:2.5rem 0; container-type:inline-size; container-name:advent-wreath; color:#111; font-family:inherit; }
+            [data-advent-wreath] *, [data-advent-wreath] *::before, [data-advent-wreath] *::after { box-sizing:border-box; }
+            [data-advent-wreath] .aw-card { background:#fafafa; border:1px solid #eaeaea; border-radius:16px; padding:2rem 1.5rem; box-shadow:0 4px 20px #00000008; }
+            [data-advent-wreath] .aw-title { margin:0 0 .3rem; padding:0; border:0; font-family:inherit; font-size:1.6rem; line-height:1.25; font-weight:700; color:#000; }
+            [data-advent-wreath] .aw-subtitle { margin:0; font-size:.95rem; line-height:1.5; color:#666; }
+            [data-advent-wreath] button { font-family:inherit; cursor:pointer; touch-action:manipulation; -webkit-tap-highlight-color:transparent; }
+            [data-advent-wreath] button:focus-visible { outline:3px solid #2563eb; outline-offset:3px; }
+            [data-advent-wreath] .aw-progress { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; margin:1.2rem 0 1.5rem; }
+            [data-advent-wreath] .aw-progress-label { font-size:.9rem; font-style:italic; color:#666; margin-right:.3rem; }
+            [data-advent-wreath] .aw-filter { border:0; border-radius:20px; min-height:44px; padding:.5rem 1rem; font-size:.85rem; font-weight:500; background:#f3f4f6; color:#374151; }
+            [data-advent-wreath] .aw-filter.is-active { background:#dbeafe; color:#1d4ed8; font-weight:600; }
+            [data-advent-wreath] .aw-layout { display:grid; grid-template-columns:minmax(0,1fr); gap:1.5rem; align-items:center; }
+            [data-advent-wreath] .aw-illustration { margin:0; background:#f0f0f0; border-radius:12px; padding:1.5rem; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:260px; }
+            [data-advent-wreath] .aw-scene { position:relative; width:100%; max-width:220px; aspect-ratio:1; }
+            [data-advent-wreath] .aw-scene svg { display:block; width:100%; height:auto; pointer-events:none; }
+            [data-advent-wreath] .aw-hit { position:absolute; padding:0; border:0; background:transparent; border-radius:9px; z-index:2; }
+            [data-advent-wreath] .aw-hit:hover, [data-advent-wreath] .aw-hit.is-selected { box-shadow:0 0 0 2px #2563eb80; }
+            [data-advent-wreath] .aw-base { inset:12% 8% 8%; border-radius:50%; z-index:1; }
+            [data-advent-wreath] .aw-candle { width:22%; height:31%; }
+            [data-advent-wreath] .aw-candle[data-item="week1"] { left:18%; top:16%; }
+            [data-advent-wreath] .aw-candle[data-item="week2"] { left:60%; top:16%; }
+            [data-advent-wreath] .aw-candle[data-item="week3"] { left:13%; top:46%; }
+            [data-advent-wreath] .aw-candle[data-item="week4"] { left:65%; top:46%; }
+            [data-advent-wreath] [data-flame] { transition:opacity .18s; }
+            [data-advent-wreath] .aw-caption { margin:.8rem 0 0; color:#666; font-size:.78rem; line-height:1.5; font-style:italic; text-align:center; }
+            [data-advent-wreath] .aw-status { display:block; margin-top:.35rem; font-style:normal; font-weight:600; color:#555; }
+            [data-advent-wreath] .aw-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; }
+            [data-advent-wreath] .aw-tile { display:block; width:100%; min-width:0; min-height:100px; background:#f3f3f3; border:1.5px solid transparent; border-radius:10px; padding:.9rem; color:#111; text-align:left; }
+            [data-advent-wreath] .aw-tile:hover { background:#fff; border-color:#b9c9e3; }
+            [data-advent-wreath] .aw-tile.is-selected { background:#fff; border-color:#2563eb; box-shadow:0 2px 8px #2563eb14; }
+            [data-advent-wreath] .aw-tile.is-future { opacity:.72; }
+            [data-advent-wreath] .aw-tile-top { display:flex; justify-content:space-between; align-items:center; gap:.3rem; margin-bottom:.2rem; font-size:.8rem; font-style:italic; color:#666; }
+            [data-advent-wreath] .aw-dot { flex:0 0 8px; height:8px; border-radius:50%; background:#7e22ce; }
+            [data-advent-wreath] .aw-dot-rose { background:#db2777; }
+            [data-advent-wreath] .aw-dot-green { background:#15803d; }
+            [data-advent-wreath] .aw-tile strong { display:block; font-size:.92rem; line-height:1.4; margin-bottom:.1rem; overflow-wrap:break-word; }
+            [data-advent-wreath] .aw-tile-label { font-size:.82rem; line-height:1.4; color:#666; font-family:monospace; }
+            [data-advent-wreath] .aw-base-label { font-style:italic; font-family:inherit; }
+            [data-advent-wreath] .aw-detail { margin-top:1.5rem; padding-left:1.2rem; border-left:4px solid #7e22ce; }
+            [data-advent-wreath] .aw-detail-header { display:flex; justify-content:space-between; align-items:baseline; gap:.5rem; flex-wrap:wrap; margin-bottom:.3rem; }
+            [data-advent-wreath] .aw-detail-title { margin:0; color:#000; font-family:inherit; font-size:1.15rem; line-height:1.4; font-weight:700; }
+            [data-advent-wreath] .aw-detail-label { font-size:.85rem; font-family:monospace; color:#666; }
+            [data-advent-wreath] .aw-detail-text { margin:0; font-size:.92rem; color:#555; line-height:1.6; }
+            [data-advent-wreath] .aw-hit:hover,
+            [data-advent-wreath] .aw-hit.is-selected { box-shadow: none; }
+            [data-advent-wreath] .aw-hit:focus:not(:focus-visible) { outline: none; }
+            @container advent-wreath (min-width:580px) { [data-advent-wreath] .aw-layout { grid-template-columns:minmax(0,1fr) minmax(0,1fr); } }
+            @container advent-wreath (max-width:360px) { [data-advent-wreath] .aw-card { padding:1.25rem .9rem; } [data-advent-wreath] .aw-tile { padding:.7rem; } }
+            @media (prefers-reduced-motion:reduce) { [data-advent-wreath] [data-flame] { transition:none; } }
+            @media (forced-colors:active) { [data-advent-wreath] .is-active, [data-advent-wreath] .is-selected { outline:2px solid Highlight; } }
+          </style>
           <div class="aw-card">
             <h2 class="aw-title">Esquema de la Corona de Adviento</h2>
             <p class="aw-subtitle">Simbolismo litúrgico, significado de las velas y base perenne.</p>
