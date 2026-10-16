@@ -1,0 +1,1 @@
+.catalog-hero{background:var(--forest);color:#fff;padding:5rem 0}.catalog-hero .eyebrow{color:var(--gold-light)}.catalog-hero h1{font-size:clamp(3rem,6vw,5rem);margin-bottom:1rem}.catalog-hero h1 em{color:var(--gold-light);font-style:italic}.catalog-hero p:not(.eyebrow){color:#cddbd3;max-width:560px}.catalog-content{background:var(--paper)}
