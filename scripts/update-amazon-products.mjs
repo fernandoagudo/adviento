@@ -51,6 +51,37 @@ function readUsablePrice(item) {
   return { amount, displayAmount };
 }
 
+function readItems(result) {
+  return result.items ?? result.itemsResult?.items ?? result.getItemsResult?.items ?? [];
+}
+
+async function getPricesByIds(accessToken, ids) {
+  if (ids.length === 0) return new Map();
+
+  const result = await request('https://creatorsapi.amazon/catalog/v1/getItems', {
+    method: 'POST',
+    headers: {
+      authorization: `Bearer ${accessToken}`,
+      'content-type': 'application/json',
+      'x-marketplace': marketplace,
+    },
+    body: JSON.stringify({
+      marketplace,
+      partnerTag: process.env.AMAZON_PARTNER_TAG,
+      itemIds: ids,
+      itemIdType: 'ASIN',
+      resources: ['offersV2.listings.price'],
+    }),
+  });
+
+  const pricesById = new Map();
+  for (const item of readItems(result)) {
+    const price = readUsablePrice(item);
+    if (typeof item.asin === 'string' && price !== null) pricesById.set(item.asin, price);
+  }
+  return pricesById;
+}
+
 let products;
 try {
   products = JSON.parse(await readFile(catalogPath, 'utf8'));
@@ -78,6 +109,7 @@ try {
 }
 
 let updatedProducts = 0;
+const updatedIds = new Set();
 if (accessToken) {
   for (const [keywords, category] of searches) {
     const matchingProducts = products.filter((product) => product.type === 'calendario' && product.category === category);
@@ -117,6 +149,31 @@ if (accessToken) {
       product.price = price.amount;
       product.priceDisplay = price.displayAmount;
       updatedProducts += 1;
+      updatedIds.add(product.id);
+    }
+  }
+
+  const remainingIds = products
+    .filter((product) => product.type === 'calendario' && !updatedIds.has(product.id))
+    .map((product) => product.id);
+
+  for (let offset = 0; offset < remainingIds.length; offset += 10) {
+    const ids = remainingIds.slice(offset, offset + 10);
+    let pricesById;
+    try {
+      pricesById = await getPricesByIds(accessToken, ids);
+    } catch (error) {
+      console.warn(`No se pudo consultar directamente los ASIN ${ids.join(', ')}: ${error.message}`);
+      continue;
+    }
+
+    for (const product of products) {
+      const price = pricesById.get(product.id);
+      if (price === undefined) continue;
+      product.price = price.amount;
+      product.priceDisplay = price.displayAmount;
+      updatedProducts += 1;
+      updatedIds.add(product.id);
     }
   }
 }
