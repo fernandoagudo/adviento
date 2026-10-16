@@ -1,5 +1,5 @@
 [
-    {
+  {
     "id": "B0HBV731ZS",
     "type": "calendario",
     "name": "Calendario de Adviento para construir tu Belén de Navidad",
@@ -9,8 +9,8 @@
     "category": "manualidades",
     "categoryLabel": "Crear y hacer",
     "audience": "niños",
-    "price": 34.99,
-    "priceDisplay": "34,99 €",
+    "price": 39.99,
+    "priceDisplay": "39,99 €",
     "imageUrl": "https://m.media-amazon.com/images/I/816EpkzWjuL._AC_SL1500_.jpg",
     "tags": [
       "manualidades",
@@ -31,7 +31,7 @@
     "categoryLabel": "jugar",
     "audience": "niños",
     "price": 18,
-    "priceDisplay": "18 €",
+    "priceDisplay": "18,00 €",
     "imageUrl": "https://m.media-amazon.com/images/I/81IekM6ijbL._AC_SL1500_.jpg",
     "tags": [
       "juguetes",
@@ -54,7 +54,7 @@
     "categoryLabel": "jugar",
     "audience": "niños",
     "price": 29.95,
-    "priceDisplay": "29.95€",
+    "priceDisplay": "29,95 €",
     "imageUrl": "https://m.media-amazon.com/images/I/81fZqNdl9jL._AC_SL1500_.jpg",
     "tags": [
       "juguetes",
