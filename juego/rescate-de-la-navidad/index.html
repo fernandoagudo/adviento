@@ -13,7 +13,7 @@
     @media(max-width:700px){.stage-heading{display:block}.stage-heading p{margin-top:.5rem}.forest-art{min-height:280px}.forest-tree{transform:scale(.68)}.tree-b{transform:scale(.86)}.clue-button{width:50px;height:50px}.clue-one{left:13%;top:37%}.clue-two{left:47%;top:60%}.clue-three{right:12%;top:34%}.clue-journal{grid-template-columns:1fr}.clue-entry{min-height:0}.symbol-grid{grid-template-columns:repeat(2,1fr)}.symbol-button:last-child{grid-column:1/-1}.game-header{gap:1rem}.back-link{text-align:right}}
     @media(max-width:380px){.game-shell{width:calc(100% - 1.25rem)}.forest-art{min-height:250px}.forest-tree{border-left-width:38px;border-right-width:38px;border-bottom-width:110px}.forest-tree:after{left:-29px;top:62px;border-left-width:29px;border-right-width:29px;border-bottom-width:83px}.clue-button{width:46px;height:46px}.clue-button small{font-size:.61rem}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
-    .clue-journal-panel{margin:1rem 0}.clue-journal-panel summary{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:.75rem 1rem;background:var(--cream);border:1px solid var(--line);border-radius:4px;cursor:pointer;color:var(--forest);font-size:.8rem;font-weight:700}.clue-journal-panel summary span:last-child{color:var(--muted);font-weight:400}.clue-journal-panel .clue-journal{margin:.7rem 0 0}
+    .clue-memory{margin:0 0 1.1rem}.clue-memory summary{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem .8rem;background:var(--cream);border:1px solid var(--line);border-radius:4px;cursor:pointer;color:var(--forest);font-size:.8rem;font-weight:700}.clue-memory ul{margin:.7rem 0 0;padding:1rem 1rem 1rem 2rem;background:var(--cream);border-left:3px solid var(--gold);color:var(--muted);font-size:.82rem}.clue-memory li+li{margin-top:.45rem}
   </style>
 </head>
 <body>
@@ -41,14 +41,11 @@
           <button class="clue-button clue-three" type="button" data-clue="bufanda" aria-label="Investigar la bufanda en el abeto derecho"><span aria-hidden="true">✦</span><small>Investigar</small></button>
           <p class="forest-note" aria-hidden="true">Tres destellos esconden pistas</p>
         </div>
-        <details id="clue-journal-panel" class="clue-journal-panel">
-          <summary><span>Mostrar las pistas encontradas</span><span id="clue-count">0 de 3</span></summary>
-          <div class="clue-journal" aria-label="Cuaderno de pistas">
-            <div id="entry-mapa" class="clue-entry"><strong>Un mapa doblado</strong><span>Aún no lo has encontrado.</span></div>
-            <div id="entry-huellas" class="clue-entry"><strong>Huellas en la nieve</strong><span>Aún no las has seguido.</span></div>
-            <div id="entry-bufanda" class="clue-entry"><strong>La bufanda de Bruno</strong><span>Aún no la has encontrado.</span></div>
-          </div>
-        </details>
+        <div class="clue-journal" aria-label="Cuaderno de pistas">
+          <div id="entry-mapa" class="clue-entry"><strong>Un mapa doblado</strong><span>Aún no lo has encontrado.</span></div>
+          <div id="entry-huellas" class="clue-entry"><strong>Huellas en la nieve</strong><span>Aún no las has seguido.</span></div>
+          <div id="entry-bufanda" class="clue-entry"><strong>La bufanda de Bruno</strong><span>Aún no la has encontrado.</span></div>
+        </div>
         <p id="forest-message" class="story-message" role="status" aria-live="polite">Bruno ha pasado por aquí. Busca los tres destellos para descubrir adónde fue.</p>
         <button id="enter-cave" class="primary-button" type="button" disabled>Seguir el rastro hasta la cueva</button>
       </section>
@@ -57,6 +54,14 @@
         <div class="stage-heading"><h2 id="cave-title" tabindex="-1">La cueva de las estrellas</h2><p>Una melodía duerme bajo la nieve.</p></div>
         <div class="cave-art" aria-hidden="true"><div class="cave-opening"></div><div class="cave-stars">✦　✧　✦　✧　✦</div></div>
         <p class="puzzle-copy">En la pared hay cinco figuras. Bruno recuerda el camino que siguió: primero vio el humo de la chimenea; después oyó una campana; un copo marcó el sendero, la luna lo iluminó y, al final, encontró un regalo. Pulsa las figuras en ese orden para despertar la melodía.</p>
+        <details class="clue-memory">
+          <summary>¿No recuerdas las pistas?</summary>
+          <ul>
+            <li>El mapa señala el humo de la chimenea y, un poco más allá, una campana que sonó al empezar el viaje.</li>
+            <li>Las huellas rodean un copo dibujado en la nieve y siguen bajo la luz tranquila de la luna.</li>
+            <li>La bufanda está junto a un dibujo de regalo. Bruno llegó hasta el final del camino, pero no se atrevió a entrar.</li>
+          </ul>
+        </details>
         <div class="symbol-grid" role="group" aria-label="Elige la siguiente figura de la secuencia">
           <button class="symbol-button" type="button" data-symbol="chimenea" aria-pressed="false"><span class="symbol-icon" aria-hidden="true">♨</span><span>Chimenea</span></button>
           <button class="symbol-button" type="button" data-symbol="campana" aria-pressed="false"><span class="symbol-icon" aria-hidden="true">🔔</span><span>Campana</span></button>
@@ -102,7 +107,6 @@
       const ending = document.querySelector('#ending');
       const forestMessage = document.querySelector('#forest-message');
       const enterCave = document.querySelector('#enter-cave');
-      const clueCount = document.querySelector('#clue-count');
       const symbolGrid = document.querySelector('.symbol-grid');
       const symbolButtons = [...symbolGrid.querySelectorAll('[data-symbol]')];
       const found = new Set();
@@ -130,7 +134,6 @@
           const entry = document.querySelector(`#entry-${clue}`);
           entry.classList.add('found');
           entry.querySelector('span').textContent = clueCopy[clue];
-          clueCount.textContent = `${found.size} de 3`;
           forestMessage.textContent = `${clueNames[clue]}. ${clueCopy[clue]}`;
           if (found.size === 3) {
             enterCave.disabled = false;
