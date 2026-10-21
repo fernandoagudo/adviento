@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173c32">
+  <title>El reno que no quería volar | Adviento.es</title>
+  <meta name="description" content="Acompaña a Bruno por el bosque, encuentra tres pistas y resuelve el misterio de la cueva de las estrellas.">
+  <link rel="canonical" href="https://adviento.es/juego/rescate-de-la-navidad/">
+  <style>
+    :root{color-scheme:light;--cream:#f8f4eb;--paper:#fffdf8;--forest:#173c32;--forest-2:#285648;--burgundy:#762f39;--burgundy-dark:#54222a;--gold:#c6a35b;--gold-light:#e4d3a7;--ink:#1d2d28;--muted:#6f7770;--line:#ddd9cf;--serif:Georgia,'Times New Roman',serif;--sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:1rem/1.65 var(--sans)}a{color:inherit;text-decoration:none}button{font:inherit}.skip-link{position:absolute;left:1rem;top:-4rem;z-index:10;padding:.7rem 1rem;background:var(--forest);color:white}.skip-link:focus{top:1rem}.game-shell{width:min(1080px,calc(100% - 2rem));margin-inline:auto}.game-header{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;border-bottom:1px solid rgba(23,60,50,.15)}.brand{font:1.35rem var(--serif);color:var(--forest);letter-spacing:-.04em}.brand b{color:var(--burgundy);font-weight:400}.back-link{font-size:.84rem;font-weight:700;color:var(--forest);border-bottom:1px solid var(--gold)}.intro{padding:clamp(2.5rem,7vw,5.3rem) 0 2.5rem;text-align:center;max-width:790px;margin-inline:auto}.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;font-weight:700;color:var(--burgundy);margin:0 0 .7rem}.intro h1{font:400 clamp(2.7rem,7vw,5rem)/1.04 var(--serif);letter-spacing:-.04em;color:var(--forest);margin:0 auto 1.2rem;max-width:760px}.intro h1 em{font-weight:400;color:var(--burgundy)}.intro-copy{max-width:680px;margin:0 auto;color:#535f58;font-size:1.04rem}.chapter-tag{display:inline-block;margin-top:1.4rem;padding:.35rem .75rem;border:1px solid var(--gold);color:#6c5428;text-transform:uppercase;letter-spacing:.12em;font-size:.68rem;font-weight:700}.stage-card{background:var(--paper);border:1px solid rgba(23,60,50,.12);box-shadow:0 18px 46px rgba(32,48,39,.08);padding:clamp(1.1rem,4vw,2.25rem);margin:1rem auto 4rem;border-radius:8px}.stage-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:1.2rem}.stage-heading h2,.fallback h2,.ending h2{font:400 clamp(1.8rem,4vw,2.6rem)/1.1 var(--serif);color:var(--forest);margin:0}.stage-heading p{margin:0;color:var(--muted);font-size:.85rem}.forest-art{position:relative;min-height:320px;overflow:hidden;border-radius:5px;background:linear-gradient(#c5d7d0 0%,#dbe5d9 55%,#edf0dc 100%);isolation:isolate}.forest-art:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 17%,#fff8dc 0 4%,transparent 4.4%),linear-gradient(180deg,transparent 55%,rgba(255,255,255,.38));z-index:-1}.ridge{position:absolute;bottom:-25%;width:80%;height:65%;border-radius:50%;background:#8da997}.ridge-one{left:-14%}.ridge-two{right:-18%;bottom:-32%;background:#a5bba6}.forest-tree{position:absolute;bottom:15%;width:0;height:0;border-left:48px solid transparent;border-right:48px solid transparent;border-bottom:135px solid var(--forest-2);filter:drop-shadow(0 5px 0 rgba(23,60,50,.08))}.forest-tree:after{content:"";position:absolute;left:-37px;top:75px;border-left:37px solid transparent;border-right:37px solid transparent;border-bottom:105px solid var(--forest)}.tree-a{left:12%;transform:scale(.86)}.tree-b{left:37%;bottom:6%;transform:scale(1.1);border-bottom-color:#1d483b}.tree-c{right:20%;transform:scale(.72);border-bottom-color:#3e715c}.tree-d{right:3%;bottom:10%;transform:scale(1.02)}.forest-path{position:absolute;bottom:-16%;left:39%;width:31%;height:65%;background:#e9dfc8;clip-path:polygon(38% 0,68% 0,100% 100%,0 100%);opacity:.85}.clue-button{position:absolute;z-index:2;display:grid;place-items:center;width:56px;height:56px;border:2px solid var(--paper);border-radius:50%;background:var(--burgundy);color:white;box-shadow:0 3px 10px #173c3266;cursor:pointer;transition:transform .2s,background .2s}.clue-button:hover{transform:scale(1.08);background:var(--burgundy-dark)}.clue-button:disabled{background:var(--forest);cursor:default}.clue-button span{font-size:1.25rem}.clue-button small{position:absolute;top:calc(100% + .3rem);white-space:nowrap;color:var(--forest);font-size:.68rem;font-weight:700;text-shadow:0 1px 3px white,0 1px 5px white}.clue-one{left:20%;top:35%}.clue-two{left:53%;top:58%}.clue-three{right:19%;top:32%}.forest-note{position:absolute;left:1rem;bottom:.8rem;margin:0;padding:.25rem .55rem;border-radius:3px;background:#fffdf8d9;color:var(--forest);font-size:.72rem;font-weight:700}.clue-journal{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin:1rem 0}.clue-entry{min-height:72px;padding:.8rem;background:var(--cream);border-left:3px solid var(--line);color:var(--muted);font-size:.78rem}.clue-entry.found{border-color:var(--gold);color:var(--forest)}.clue-entry strong{display:block;font:1rem var(--serif);color:var(--ink);margin-bottom:.15rem}.story-message{min-height:3rem;padding:.8rem 1rem;margin:.7rem 0 1rem;border-radius:4px;background:#f2eee4;color:#47564d;font-size:.88rem}.primary-button,.symbol-button,.reset-button{min-height:48px;border:0;border-radius:3px;padding:.78rem 1.1rem;font-weight:700;cursor:pointer}.primary-button{background:var(--burgundy);color:white}.primary-button:disabled{background:#aaa69e;cursor:not-allowed}.primary-button:hover:not(:disabled){background:var(--burgundy-dark)}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #b08128;outline-offset:3px}.cave-art{position:relative;min-height:205px;display:grid;place-items:center;overflow:hidden;margin:0 0 1.2rem;border-radius:5px;background:radial-gradient(ellipse at 50% 90%,#506b5d 0 4%,transparent 4.4%),linear-gradient(#243e38,#10221f)}.cave-opening{position:absolute;bottom:-24%;left:50%;width:min(52%,370px);height:108%;transform:translateX(-50%);border:12px solid #566856;border-bottom:0;border-radius:50% 50% 0 0;background:#091512}.cave-stars{position:relative;z-index:1;display:flex;justify-content:center;flex-wrap:wrap;gap:1.2rem;max-width:460px;padding:1rem;color:var(--gold-light);font-size:1.25rem;text-shadow:0 0 16px #ffeaa5}.puzzle-copy{color:#58645d;margin:0 0 1.1rem}.symbol-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.7rem}.symbol-button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.25rem;min-height:96px;background:#f1ecdf;color:var(--forest);border:1px solid #e0d9c8;transition:transform .2s,background .2s}.symbol-button:hover{transform:translateY(-3px);background:#e9dfc8}.symbol-button[aria-pressed="true"]{background:#eadcb9;border-color:var(--gold)}.symbol-icon{font-size:1.65rem;line-height:1}.symbol-button span:last-child{font-size:.78rem}.puzzle-progress{font-size:.8rem;color:var(--muted);margin:.8rem 0 0}.reset-button{margin-top:.6rem;padding:.5rem .75rem;min-height:40px;background:transparent;border:1px solid var(--forest);color:var(--forest);font-size:.8rem}.ending{padding:1.6rem;background:#f4eddc;border:1px solid #ddc78f;text-align:center;border-radius:5px}.bell-seal{width:92px;height:92px;margin:0 auto 1rem;display:grid;place-items:center;border:1px solid var(--gold);border-radius:50%;font-size:2.7rem;color:#80662a;background:#fbf5e6}.ending h2{margin-bottom:.7rem}.ending p{max-width:580px;margin:.5rem auto;color:#4f5c54}.continuation{font:italic 1.15rem var(--serif)!important;color:var(--burgundy)!important}.fallback{margin:1rem auto 4rem;padding:clamp(1.2rem,4vw,2.3rem);background:var(--paper);border:1px solid var(--line);border-radius:8px;max-width:850px}.fallback p,.fallback li{color:#505e55}.fallback ol{padding-left:1.5rem}.fallback details{padding:1rem;background:var(--cream);border-radius:4px}.fallback summary{cursor:pointer;font-weight:700;color:var(--forest)}.site-footer{padding:1.2rem 0 2.5rem;color:var(--muted);font-size:.76rem;text-align:center;border-top:1px solid rgba(23,60,50,.12)}.site-footer a{color:var(--forest);font-weight:700}.sr-only{position:absolute;width:1px;height:1px;padding:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:700px){.stage-heading{display:block}.stage-heading p{margin-top:.5rem}.forest-art{min-height:280px}.forest-tree{transform:scale(.68)}.tree-b{transform:scale(.86)}.clue-button{width:50px;height:50px}.clue-one{left:13%;top:37%}.clue-two{left:47%;top:60%}.clue-three{right:12%;top:34%}.clue-journal{grid-template-columns:1fr}.clue-entry{min-height:0}.symbol-grid{grid-template-columns:repeat(2,1fr)}.symbol-button:last-child{grid-column:1/-1}.game-header{gap:1rem}.back-link{text-align:right}}
+    @media(max-width:380px){.game-shell{width:calc(100% - 1.25rem)}.forest-art{min-height:250px}.forest-tree{border-left-width:38px;border-right-width:38px;border-bottom-width:110px}.forest-tree:after{left:-29px;top:62px;border-left-width:29px;border-right-width:29px;border-bottom-width:83px}.clue-button{width:46px;height:46px}.clue-button small{font-size:.61rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al capítulo</a>
+  <header class="game-shell game-header">
+    <a class="brand" href="/" aria-label="Adviento.es, volver al inicio">adviento<b>.es</b></a>
+    <a class="back-link" href="/">Volver a Adviento.es <span aria-hidden="true">←</span></a>
+  </header>
+  <main id="contenido" class="game-shell">
+    <section class="intro" aria-labelledby="chapter-title">
+      <p class="eyebrow">Una aventura de Adviento · Capítulo 1</p>
+      <h1 id="chapter-title">El reno que no quería <em>volar</em></h1>
+      <p class="intro-copy">La víspera del primer reparto de regalos, Bruno se quedó en tierra. «¿Y si me pierdo ahí arriba?», murmuró, escondiendo la nariz entre la bufanda. Para ayudarle, tendrás que seguir sus huellas por el bosque y devolverle la confianza, una estrella cada vez.</p>
+      <span class="chapter-tag">Lectura y juego · Sin prisas</span>
+    </section>
+
+    <section id="game" class="stage-card" aria-label="Aventura interactiva" hidden>
+      <section id="forest-stage" aria-labelledby="forest-title">
+        <div class="stage-heading"><h2 id="forest-title">El bosque de los abetos</h2><p>Encuentra las tres pistas de Bruno.</p></div>
+        <div class="forest-art" aria-label="Un bosque nevado con tres lugares para investigar">
+          <div class="ridge ridge-one" aria-hidden="true"></div><div class="ridge ridge-two" aria-hidden="true"></div><div class="forest-path" aria-hidden="true"></div>
+          <div class="forest-tree tree-a" aria-hidden="true"></div><div class="forest-tree tree-b" aria-hidden="true"></div><div class="forest-tree tree-c" aria-hidden="true"></div><div class="forest-tree tree-d" aria-hidden="true"></div>
+          <button class="clue-button clue-one" type="button" data-clue="mapa" aria-label="Investigar el mapa junto al abeto izquierdo"><span aria-hidden="true">✦</span><small>Investigar</small></button>
+          <button class="clue-button clue-two" type="button" data-clue="huellas" aria-label="Investigar las huellas junto al sendero"><span aria-hidden="true">✦</span><small>Investigar</small></button>
+          <button class="clue-button clue-three" type="button" data-clue="bufanda" aria-label="Investigar la bufanda en el abeto derecho"><span aria-hidden="true">✦</span><small>Investigar</small></button>
+          <p class="forest-note" aria-hidden="true">Tres destellos esconden pistas</p>
+        </div>
+        <div class="clue-journal" aria-label="Cuaderno de pistas">
+          <div id="entry-mapa" class="clue-entry"><strong>Un mapa doblado</strong><span>Aún no lo has encontrado.</span></div>
+          <div id="entry-huellas" class="clue-entry"><strong>Huellas en la nieve</strong><span>Aún no las has seguido.</span></div>
+          <div id="entry-bufanda" class="clue-entry"><strong>La bufanda de Bruno</strong><span>Aún no la has encontrado.</span></div>
+        </div>
+        <p id="forest-message" class="story-message" role="status" aria-live="polite">Bruno ha pasado por aquí. Busca los tres destellos para descubrir adónde fue.</p>
+        <button id="enter-cave" class="primary-button" type="button" disabled>Seguir el rastro hasta la cueva</button>
+      </section>
+
+      <section id="cave-stage" aria-labelledby="cave-title" hidden>
+        <div class="stage-heading"><h2 id="cave-title" tabindex="-1">La cueva de las estrellas</h2><p>Una melodía duerme bajo la nieve.</p></div>
+        <div class="cave-art" aria-hidden="true"><div class="cave-opening"></div><div class="cave-stars">✦　✧　✦　✧　✦</div></div>
+        <p class="puzzle-copy">En la pared hay cinco figuras. Bruno recuerda el camino que siguió: primero vio el humo de la chimenea; después oyó una campana; un copo marcó el sendero, la luna lo iluminó y, al final, encontró un regalo. Pulsa las figuras en ese orden para despertar la melodía.</p>
+        <div class="symbol-grid" role="group" aria-label="Elige la siguiente figura de la secuencia">
+          <button class="symbol-button" type="button" data-symbol="chimenea" aria-pressed="false"><span class="symbol-icon" aria-hidden="true">♨</span><span>Chimenea</span></button>
+          <button class="symbol-button" type="button" data-symbol="campana" aria-pressed="false"><span class="symbol-icon" aria-hidden="true">🔔</span><span>Campana</span></button>
+          <button class="symbol-button" type="button" data-symbol="copo" aria-pressed="false"><span class="symbol-icon" aria-hidden="true">❄</span><span>Copo</span></button>
+          <button class="symbol-button" type="button" data-symbol="luna" aria-pressed="false"><span class="symbol-icon" aria-hidden="true">☾</span><span>Luna</span></button>
+          <button class="symbol-button" type="button" data-symbol="regalo" aria-pressed="false"><span class="symbol-icon" aria-hidden="true">🎁</span><span>Regalo</span></button>
+        </div>
+        <p id="puzzle-message" class="story-message" role="status" aria-live="polite">La cueva espera la secuencia. Escucha el recuerdo de Bruno y elige la primera figura.</p>
+        <p id="puzzle-progress" class="puzzle-progress">Secuencia: 0 de 5</p>
+        <button id="reset-puzzle" class="reset-button" type="button">Empezar de nuevo</button>
+      </section>
+
+      <section id="ending" class="ending" aria-labelledby="ending-title" hidden>
+        <div class="bell-seal" aria-hidden="true">🔔</div>
+        <p class="eyebrow">Capítulo completado</p>
+        <h2 id="ending-title" tabindex="-1">La campana dorada vuelve a sonar</h2>
+        <p>La melodía llenó la cueva. Bruno alzó las alas, dio un salto y, por primera vez, el cielo dejó de parecerle tan grande. La campana dorada era suya: no para no tener miedo, sino para recordar que podía volar acompañado.</p>
+        <p class="continuation">Y muy lejos, en el taller del Polo Norte, una ventana se iluminó. Alguien había dejado un regalo sin etiqueta…</p>
+        <a class="primary-button" href="/" style="display:inline-flex;align-items:center;margin-top:.6rem">Volver a Adviento.es <span aria-hidden="true">→</span></a>
+      </section>
+    </section>
+
+    <section id="fallback" class="fallback" aria-labelledby="fallback-title">
+      <p class="eyebrow">El capítulo también se puede leer</p>
+      <h2 id="fallback-title">Sigue las pistas con Bruno</h2>
+      <p>Bruno cree que el cielo es demasiado grande para cruzarlo solo. En el bosque, sus tres pistas cuentan el camino hasta la cueva:</p>
+      <ol>
+        <li>El mapa recuerda el humo de la <strong>chimenea</strong> y el primer repique de la <strong>campana</strong>.</li>
+        <li>Las huellas siguen un <strong>copo</strong> dibujado en la nieve y después la luz de la <strong>luna</strong>.</li>
+        <li>La bufanda está junto al último dibujo: un <strong>regalo</strong> que esperaba al final del camino.</li>
+      </ol>
+      <details><summary>Leer el desenlace</summary><p>Al tocar la secuencia chimenea → campana → copo → luna → regalo, la cueva se llenó de música y apareció una campana dorada. Bruno se la colgó al cuello. No había dejado de tener miedo; ahora sabía que no tenía que volar solo. Y, en el taller del Polo Norte, una ventana se iluminó junto a un regalo sin etiqueta…</p></details>
+      <p>Este recorrido narrado está disponible si la interacción del navegador no carga.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><p>Una historia de Adviento.es · <a href="/">La magia empieza antes de Navidad</a></p></footer>
+  <script>
+    (() => {
+      const game = document.querySelector('#game');
+      const fallback = document.querySelector('#fallback');
+      const forestStage = document.querySelector('#forest-stage');
+      const caveStage = document.querySelector('#cave-stage');
+      const ending = document.querySelector('#ending');
+      const forestMessage = document.querySelector('#forest-message');
+      const enterCave = document.querySelector('#enter-cave');
+      const found = new Set();
+      const clueCopy = {
+        mapa: 'El mapa señala el humo de la chimenea y, un poco más allá, una campana que sonó al empezar el viaje.',
+        huellas: 'Las huellas rodean un copo dibujado en la nieve y siguen bajo la luz tranquila de la luna.',
+        bufanda: 'La bufanda está junto a un dibujo de regalo. Bruno llegó hasta el final del camino, pero no se atrevió a entrar.',
+      };
+      const clueNames = {mapa:'Mapa encontrado',huellas:'Huellas seguidas',bufanda:'Bufanda encontrada'};
+      const sequence = ['chimenea','campana','copo','luna','regalo'];
+      const symbolNames = {chimenea:'chimenea',campana:'campana',copo:'copo',luna:'luna',regalo:'regalo'};
+      let progress = 0;
+
+      game.hidden = false;
+      fallback.hidden = true;
+
+      document.querySelectorAll('[data-clue]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const clue = button.dataset.clue;
+          if (found.has(clue)) return;
+          found.add(clue);
+          button.disabled = true;
+          button.querySelector('span').textContent = '✓';
+          button.querySelector('small').textContent = 'Descubierta';
+          const entry = document.querySelector(`#entry-${clue}`);
+          entry.classList.add('found');
+          entry.querySelector('span').textContent = clueCopy[clue];
+          forestMessage.textContent = `${clueNames[clue]}. ${clueCopy[clue]}`;
+          if (found.size === 3) {
+            enterCave.disabled = false;
+            forestMessage.textContent = 'Ya tienes las tres pistas. El rastro llega hasta una cueva escondida entre los abetos.';
+            enterCave.focus();
+          }
+        });
+      });
+
+      enterCave.addEventListener('click', () => {
+        forestStage.hidden = true;
+        caveStage.hidden = false;
+        document.querySelector('#cave-title').focus();
+        document.querySelector('[data-symbol="chimenea"]').focus();
+      });
+
+      document.querySelectorAll('[data-symbol]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const symbol = button.dataset.symbol;
+          if (symbol !== sequence[progress]) {
+            progress = 0;
+            document.querySelectorAll('[data-symbol]').forEach((item) => item.setAttribute('aria-pressed','false'));
+            document.querySelector('#puzzle-progress').textContent = 'Secuencia: 0 de 5';
+            document.querySelector('#puzzle-message').textContent = `La luz se apaga: ${symbolNames[symbol]} no va en este lugar. La cueva vuelve al comienzo; prueba otra vez desde la chimenea.`;
+            return;
+          }
+          button.setAttribute('aria-pressed','true');
+          progress += 1;
+          document.querySelector('#puzzle-progress').textContent = `Secuencia: ${progress} de 5`;
+          if (progress === sequence.length) {
+            caveStage.hidden = true;
+            ending.hidden = false;
+            document.querySelector('#ending-title').focus();
+          } else {
+            const next = symbolNames[sequence[progress]];
+            document.querySelector('#puzzle-message').textContent = `La figura de ${symbolNames[symbol]} brilla. ${progress} de 5: ahora busca ${next}.`;
+          }
+        });
+      });
+
+      document.querySelector('#reset-puzzle').addEventListener('click', () => {
+        progress = 0;
+        document.querySelectorAll('[data-symbol]').forEach((button) => button.setAttribute('aria-pressed','false'));
+        document.querySelector('#puzzle-progress').textContent = 'Secuencia: 0 de 5';
+        document.querySelector('#puzzle-message').textContent = 'La secuencia vuelve al comienzo. Empieza por la chimenea.';
+        document.querySelector('[data-symbol="chimenea"]').focus();
+      });
+    })();
+  </script>
+</body>
+</html>
