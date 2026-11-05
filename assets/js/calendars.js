@@ -15,7 +15,7 @@
       const name = escape(p.title || p.name);
       const image = p.imageUrl ? `<img src="${escape(p.imageUrl)}" alt="${name}" loading="lazy">` : '<span class="product-illustration">✦</span>';
       const price = escape(p.priceDisplay || `${Number(p.price).toFixed(2).replace('.', ',')} €`);
-      return `<article class="product-card"><a class="product-image ${escape(p.imageClass || `product-image-${['one', 'two', 'three'][i % 3]}`)}" href="${url}">${image}</a><div class="product-info"><p class="product-category">${escape(p.categoryLabel || p.category)}</p><h3><a href="${url}">${name}</a></h3><p class="product-meta">${escape(p.subtitle || p.description)}</p><div class="product-bottom"><strong>${price}</strong><a href="${url}">Ver más ↗</a></div></div></article>`;
+      return `<article class="product-card"><a class="product-image ${escape(p.imageClass || `product-image-${['one', 'two', 'three'][i % 3]}`)}" href="${url}">${image}</a><div class="product-info"><p class="product-category">${escape(p.categoryLabel || p.category)}</p><h3><a href="${url}">${name}</a></h3><p class="product-meta">${escape(p.subtitle)}</p><div class="product-bottom"><strong>${price}</strong><a href="${url}">Ver más ↗</a></div></div></article>`;
     }).join('') : '<p class="no-results">Pronto añadiremos calendarios para esta selección.</p>';
   };
   fetch('../../data/products.json').then((response) => response.json()).then(render).catch(() => {
