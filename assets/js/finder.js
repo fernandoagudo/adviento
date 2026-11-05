@@ -29,17 +29,18 @@
   search.value = new URLSearchParams(location.search).get('q') || '';
   fetch('../data/products.json').then(response => { if (!response.ok) throw new Error('fetch'); return response.json(); }).then(data => {
     all = data.filter(p => p.type === type);
-    if (type === 'regalo') {
-      const field = document.querySelector('#gift-categories');
-      const categories = new Map();
-      all.forEach(p => { if (p.category) categories.set(p.category, p.categoryLabel || p.category); });
-      categories.forEach((label, key) => {
-        const labelElement = document.createElement('label');
+    const labels = { ninos: 'Niños' };
+    ['audience', 'category'].forEach(field => {
+      const container = document.querySelector(`#${field}-filters`);
+      const values = [...new Set(all.map(p => p[field]).filter(item => typeof item === 'string' && item.trim()))];
+      values.forEach(option => {
+        const label = document.createElement('label');
         const input = document.createElement('input');
-        input.type = 'radio'; input.name = 'category'; input.value = key;
-        labelElement.append(input, document.createTextNode(label)); field.append(labelElement);
+        input.type = 'radio'; input.name = field; input.value = option;
+        const text = labels[option] || option.charAt(0).toLocaleUpperCase('es') + option.slice(1);
+        label.append(input, document.createTextNode(text)); container.append(label);
       });
-    }
+    });
     render();
   }).catch(() => { count.textContent = `No se han podido cargar los ${plural}.`; });
   document.querySelector('.filter-panel').addEventListener('change', render);

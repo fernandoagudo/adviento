@@ -48,7 +48,6 @@
           <p>Busca calendarios por destinatario, categoría y presupuesto. Para pequeños detalles, visita nuestras <a href="../regalos-de-adviento/">ideas de regalos</a>.</p>
         </div>
       </section>
-      <section class="section"><div class="container"><h2>Categorías de calendarios</h2><p><a href="para-ninos/">Para niños</a> · <a href="manualidades/">Manualidades</a> · <a href="belleza/">Belleza</a> · <a href="gourmet/">Gourmet</a> · <a href="chocolate/">Chocolate</a> · <a href="juguetes/">Juguetes</a> · <a href="mascotas/">Mascotas</a> · <a href="originales/">Originales</a></p></div></section>
       <section class="finder-tool section">
         <div class="container finder-layout">
           <aside class="filter-panel" aria-label="Filtros de búsqueda">
@@ -56,38 +55,14 @@
               <h2>Filtrar selección</h2>
               <button id="clear-filters" type="button">Limpiar</button>
             </div>
-            <fieldset>
+            <fieldset id="audience-filters">
               <legend>¿Para quién?</legend>
-              <label>
-                <input type="radio" name="audience" value="todos" checked>Cualquiera</label>
-                <label>
-                  <input type="radio" name="audience" value="ninos">Niños</label>
-                  <label>
-                    <input type="radio" name="audience" value="adultos">Adultos</label>
-                    <label>
-                      <input type="radio" name="audience" value="parejas">Parejas</label>
-                      <label>
-                        <input type="radio" name="audience" value="familias">Familias</label>
-                      <label><input type="radio" name="audience" value="perros">Perros</label>
-                      <label><input type="radio" name="audience" value="gatos">Gatos</label>
-                      </fieldset>
-                      <fieldset>
-                        <legend>¿Qué le gusta?</legend>
-                        <label>
-                          <input type="radio" name="category" value="todas" checked>Cualquier estilo</label>
-                          <label>
-                            <input type="radio" name="category" value="manualidades">Crear y hacer</label>
-                            <label>
-                              <input type="radio" name="category" value="belleza">Belleza y calma</label>
-                              <label>
-                                <input type="radio" name="category" value="gourmet">Comer y disfrutar</label>
-                                <label>
-                                  <input type="radio" name="category" value="juguetes">Jugar y construir</label>
-                                  <label>
-                                    <input type="radio" name="category" value="originales">Algo original</label>
-                                  <label><input type="radio" name="category" value="chocolate">Chocolate</label>
-                                  <label><input type="radio" name="category" value="mascotas">Mascotas</label>
-                                  </fieldset>
+              <label><input type="radio" name="audience" value="todos" checked>Cualquiera</label>
+            </fieldset>
+            <fieldset id="category-filters">
+              <legend>¿Qué le gusta?</legend>
+              <label><input type="radio" name="category" value="todas" checked>Cualquier estilo</label>
+            </fieldset>
                                   <fieldset>
                                     <legend>Presupuesto máximo</legend>
                                     <label>

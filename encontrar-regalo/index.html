@@ -55,23 +55,14 @@
               <h2>Filtrar selección</h2>
               <button id="clear-filters" type="button">Limpiar</button>
             </div>
-            <fieldset>
+            <fieldset id="audience-filters">
               <legend>¿Para quién?</legend>
-              <label>
-                <input type="radio" name="audience" value="todos" checked>Cualquiera</label>
-                <label>
-                  <input type="radio" name="audience" value="ninos">Niños</label>
-                  <label>
-                    <input type="radio" name="audience" value="adultos">Adultos</label>
-                    <label>
-                      <input type="radio" name="audience" value="parejas">Parejas</label>
-                      <label>
-                        <input type="radio" name="audience" value="familias">Familias</label>
-                      </fieldset>
-                      <fieldset id="gift-categories">
-                        <legend>Categoría de regalo</legend>
-                        <label><input type="radio" name="category" value="todas" checked>Todas</label>
-                      </fieldset>
+              <label><input type="radio" name="audience" value="todos" checked>Cualquiera</label>
+            </fieldset>
+            <fieldset id="category-filters">
+              <legend>¿Qué le gusta?</legend>
+              <label><input type="radio" name="category" value="todas" checked>Cualquier estilo</label>
+            </fieldset>
                                   <fieldset>
                                     <legend>Presupuesto máximo</legend>
                                     <label>
