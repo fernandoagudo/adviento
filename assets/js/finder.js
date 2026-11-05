@@ -37,7 +37,8 @@
         const label = document.createElement('label');
         const input = document.createElement('input');
         input.type = 'radio'; input.name = field; input.value = option;
-        const text = labels[option] || option.charAt(0).toLocaleUpperCase('es') + option.slice(1);
+        const categoryLabel = field === 'category' ? all.find(p => p.category === option && p.categoryLabel)?.categoryLabel : null;
+        const text = categoryLabel || labels[option] || option.charAt(0).toLocaleUpperCase('es') + option.slice(1);
         label.append(input, document.createTextNode(text)); container.append(label);
       });
     });
