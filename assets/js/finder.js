@@ -1,1 +1,51 @@
-(() => {const s=document.createElement('link');s.rel='stylesheet';s.href='../assets/css/finder.css';document.head.appendChild(s);const box=document.querySelector('#product-results');if(!box)return;let all=[];const e=v=>String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])),value=n=>document.querySelector(`input[name="${n}"]:checked`)?.value,page=p=>p.type==='calendario'?`../productos/amazon/?asin=${encodeURIComponent(p.id)}`:`../productos/${e(p.slug)}/`,render=()=>{const audience=value('audience'),category=value('category'),max=Number(value('price')),q=document.querySelector('#search-products').value.trim().toLowerCase(),items=all.filter(p=>(audience==='todos'||p.audience===audience)&&(category==='todas'||p.category===category)&&(!max||p.price<=max)&&(!q||`${p.title||p.name} ${p.subtitle||p.description} ${(p.tags||[]).join(' ')}`.toLowerCase().includes(q)));document.querySelector('#results-count').textContent=items.length===all.length?`Mostrando ${all.length} calendarios`:`${items.length} ${items.length===1?'resultado encontrado':'resultados encontrados'}`;document.querySelector('#no-results').hidden=items.length>0;box.innerHTML=items.map((p,i)=>{const detail=page(p),name=e(p.title||p.name),img=p.imageUrl?`<img src="${e(p.imageUrl)}" alt="${name}" loading="lazy">`:'<span class="product-illustration">✦</span>';return `<article class="product-card"><a class="product-image ${e(p.imageClass||`product-image-${['one','two','three'][i%3]}`)}" href="${detail}">${img}</a><div class="product-info"><p class="product-category">${e(p.categoryLabel||p.category)}</p><h3><a href="${detail}">${name}</a></h3><p class="product-meta">${e(p.subtitle||p.description)}</p><div class="product-bottom"><strong>${e(p.priceDisplay||`Desde ${Number(p.price).toFixed(2).replace('.',',')} €`)}</strong><a href="${detail}">Ver calendario <span aria-hidden="true">↗</span></a></div></div></article>`}).join('')};fetch('../data/products.json').then(r=>r.json()).then(data=>{all=data.filter(p=>p.type==='calendario');render()}).catch(()=>{document.querySelector('#results-count').textContent='No se han podido cargar los calendarios.'});document.querySelectorAll('input[name="audience"],input[name="category"],input[name="price"]').forEach(x=>x.addEventListener('change',render));document.querySelector('#search-products').value=new URLSearchParams(location.search).get('q')||'';document.querySelector('#search-products').addEventListener('input',render);document.querySelector('#clear-filters').addEventListener('click',()=>{document.querySelector('input[name="audience"][value="todos"]').checked=true;document.querySelector('input[name="category"][value="todas"]').checked=true;document.querySelector('input[name="price"][value="0"]').checked=true;document.querySelector('#search-products').value='';render()})})();
+(() => {
+  const box = document.querySelector('#product-results');
+  if (!box) return;
+  const type = document.body.dataset.productType === 'regalo' ? 'regalo' : 'calendario';
+  const plural = type === 'regalo' ? 'regalos' : 'calendarios';
+  const escape = value => String(value ?? '').replace(/[&<>'"]/g, char => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'}[char]));
+  const value = name => document.querySelector(`input[name="${name}"]:checked`)?.value;
+  const search = document.querySelector('#search-products');
+  const count = document.querySelector('#results-count');
+  let all = [];
+  const render = () => {
+    const audience = value('audience'), category = value('category'), max = Number(value('price'));
+    const q = search.value.trim().toLowerCase();
+    const items = all.filter(p => (audience === 'todos' || p.audience === audience) && (category === 'todas' || p.category === category) && (!max || p.price <= max) && (!q || `${p.title || p.name} ${p.subtitle || p.description || ''} ${(p.tags || []).join(' ')}`.toLowerCase().includes(q)));
+    count.textContent = items.length === all.length ? `Mostrando ${all.length} ${plural}` : `${items.length} ${items.length === 1 ? 'resultado encontrado' : 'resultados encontrados'}`;
+    const empty = document.querySelector('#no-results');
+    empty.hidden = items.length > 0;
+    empty.textContent = all.length === 0 ? `Todavía no hay ${plural} en el catálogo.` : 'No hemos encontrado una combinación exacta. Prueba a quitar algún filtro.';
+    box.innerHTML = items.map((p, i) => {
+      const detail = type === 'calendario' ? `../productos/amazon/?asin=${encodeURIComponent(p.id)}` : p.slug ? `../productos/${encodeURIComponent(p.slug)}/` : p.affiliateUrl || '';
+      const name = escape(p.title || p.name);
+      const img = p.imageUrl ? `<img src="${escape(p.imageUrl)}" alt="${name}" loading="lazy">` : '<span class="product-illustration">✦</span>';
+      const title = detail ? `<a href="${escape(detail)}">${name}</a>` : name;
+      const picture = detail ? `<a class="product-image ${escape(p.imageClass || `product-image-${['one','two','three'][i % 3]}`)}" href="${escape(detail)}">${img}</a>` : `<div class="product-image">${img}</div>`;
+      const link = detail ? `<a href="${escape(detail)}">Ver ${type} <span aria-hidden="true">↗</span></a>` : '';
+      return `<article class="product-card">${picture}<div class="product-info"><p class="product-category">${escape(p.categoryLabel || p.category)}</p><h3>${title}</h3><p class="product-meta">${escape(p.subtitle)}</p><div class="product-bottom"><strong>${escape(p.priceDisplay || (Number.isFinite(Number(p.price)) ? `${Number(p.price).toFixed(2).replace('.', ',')} €` : ''))}</strong>${link}</div></div></article>`;
+    }).join('');
+  };
+  search.value = new URLSearchParams(location.search).get('q') || '';
+  fetch('../data/products.json').then(response => { if (!response.ok) throw new Error('fetch'); return response.json(); }).then(data => {
+    all = data.filter(p => p.type === type);
+    if (type === 'regalo') {
+      const field = document.querySelector('#gift-categories');
+      const categories = new Map();
+      all.forEach(p => { if (p.category) categories.set(p.category, p.categoryLabel || p.category); });
+      categories.forEach((label, key) => {
+        const labelElement = document.createElement('label');
+        const input = document.createElement('input');
+        input.type = 'radio'; input.name = 'category'; input.value = key;
+        labelElement.append(input, document.createTextNode(label)); field.append(labelElement);
+      });
+    }
+    render();
+  }).catch(() => { count.textContent = `No se han podido cargar los ${plural}.`; });
+  document.querySelector('.filter-panel').addEventListener('change', render);
+  search.addEventListener('input', render);
+  document.querySelector('#clear-filters').addEventListener('click', () => {
+    ['audience', 'category', 'price'].forEach(name => { const input = document.querySelector(`input[name="${name}"]`); if (input) input.checked = true; });
+    search.value = ''; render();
+  });
+})();

@@ -3,15 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Calendarios de Adviento 2026 | Adviento.es</title>
-    <meta name="description" content="Descubre calendarios de Adviento para niños, adultos, parejas y familias: chocolate, belleza, juguetes, gourmet y opciones originales.">
+    <title>Encuentra tu calendario de Adviento | Adviento.es</title>
+    <meta name="description" content="Filtra y descubre calendarios de Adviento según gustos y presupuesto.">
     <link rel="canonical" href="https://adviento.es/calendarios-de-adviento/">
     <link rel="stylesheet" href="../assets/css/variables.css">
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/components.css">
     <link rel="stylesheet" href="../assets/css/pages.css">
+    <link rel="stylesheet" href="../assets/css/finder.css">
   </head>
-  <body>
+  <body class="finder-page" data-product-type="calendario">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="site-header">
       <div class="container header-inner">
@@ -29,117 +30,123 @@
           <span class="sr-only">Abrir menú</span>
         </button>
         <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
-          <a href="./">Calendarios</a>
+          <a href="../calendarios-de-adviento/">Calendarios</a>
           <a href="../regalos-de-adviento/">Regalos</a>
           <a href="../24-dias-de-adviento/">24 días</a>
           <a href="../adviento/">Guías</a>
-          <a class="nav-finder" href="../encontrar-calendario/">Encuentra tu calendario →</a>
+          <a class="nav-finder" href="../calendarios-de-adviento/">Encuentra tu calendario →</a>
         </nav>
       </div>
     </header>
     <main id="contenido">
-      <section class="catalog-hero">
+      <section class="finder-intro">
         <div class="container">
-          <p class="eyebrow">La selección de Adviento.es</p>
-          <h1>Calendarios de Adviento<br>
-            <em>para contar los días.</em>
+          <p class="eyebrow">Tu búsqueda empieza aquí</p>
+          <h1>Encuentra un calendario<br>
+            <em>hecho para esa persona.</em>
           </h1>
-          <p>Una selección de ideas bonitas para regalar, compartir o disfrutar a solas. Filtra por estilo y encuentra el que encaja contigo.</p>
+          <p>Busca calendarios por destinatario, categoría y presupuesto. Para pequeños detalles, visita nuestras <a href="../regalos-de-adviento/">ideas de regalos</a>.</p>
         </div>
       </section>
-      <section class="section catalog-content">
-        <div class="container">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">Nuestros favoritos</p>
-              <h2>Todos los calendarios</h2>
+      <section class="section"><div class="container"><h2>Categorías de calendarios</h2><p><a href="para-ninos/">Para niños</a> · <a href="manualidades/">Manualidades</a> · <a href="belleza/">Belleza</a> · <a href="gourmet/">Gourmet</a> · <a href="chocolate/">Chocolate</a> · <a href="juguetes/">Juguetes</a> · <a href="mascotas/">Mascotas</a> · <a href="originales/">Originales</a></p></div></section>
+      <section class="finder-tool section">
+        <div class="container finder-layout">
+          <aside class="filter-panel" aria-label="Filtros de búsqueda">
+            <div class="filter-heading">
+              <h2>Filtrar selección</h2>
+              <button id="clear-filters" type="button">Limpiar</button>
             </div>
-            <a class="button button-outline" href="../encontrar-calendario/">Usar el buscador <span aria-hidden="true">→</span>
-            </a>
-          </div>
-          <p>Explora por categoría: <a href="manualidades/">Manualidades</a> · <a href="belleza/">Belleza</a> · <a href="gourmet/">Gourmet</a> · <a href="chocolate/">Chocolate</a> · <a href="juguetes/">Juguetes</a> · <a href="mascotas/">Mascotas</a> · <a href="originales/">Originales</a>.</p>
-          <div class="catalog-filters" aria-label="Filtrar calendarios">
-            <label for="catalog-category">Categoría</label>
-            <select id="catalog-category">
-              <option value="todas">Todas</option>
-              <option value="manualidades">Manualidades</option>
-              <option value="belleza">Belleza</option>
-              <option value="gourmet">Gourmet</option>
-              <option value="chocolate">Chocolate</option>
-              <option value="juguetes">Juguetes</option>
-              <option value="mascotas">Mascotas</option>
-              <option value="originales">Originales</option>
-            </select>
-            <label for="catalog-price">Precio máximo</label>
-            <select id="catalog-price">
-              <option value="0">Sin límite</option>
-              <option value="20">20 €</option>
-              <option value="30">30 €</option>
-              <option value="50">50 €</option>
-            </select>
-          </div>
-          <p id="catalog-count" class="catalog-count" aria-live="polite">Cargando calendarios…</p>
-          <div id="catalog-results" class="product-grid">
-            <article class="product-card">
-              <div class="product-image product-image-one">
-                <span class="product-illustration">✦</span>
-              </div>
-              <div class="product-info">
-                <p class="product-category">Selección editorial</p>
-                <h3>Calendarios para cada forma de celebrar</h3>
-                <p class="product-meta">Cargando nuestra selección…</p>
-              </div>
-            </article>
-          </div>
-          <p class="affiliate-note">* Algunos enlaces pueden ser de afiliación. Si compras a través de ellos, nosotros recibimos una pequeña comisión sin coste adicional para ti.</p>
-        </div>
-      </section>
-      <section class="finder-section">
-        <div class="container finder-card">
-          <div>
-            <p class="eyebrow">¿Necesitas inspiración?</p>
-            <h2>Encuentra tu calendario ideal.</h2>
-            <p>Descubre el calendario que mejor encaja con esa persona.</p>
-            <a class="button button-light" href="../encontrar-calendario/">Encontrar mi calendario <span aria-hidden="true">→</span>
-            </a>
-          </div>
-          <div class="finder-seal" aria-hidden="true">
-            <span>24</span>
-            <small>momentos<br>para elegir</small>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div>
-          <a class="brand brand-footer" href="../">
-            <span class="brand-mark">✦</span>
-            <span>adviento<span class="brand-dot">.</span>es</span>
-          </a>
-          <p>La magia empieza antes de Navidad.</p>
-        </div>
-        <div>
-          <h2>Descubre</h2>
-          <a href="./">Calendarios</a>
-          <a href="../regalos-de-adviento/">Regalos</a>
-          <a href="../24-dias-de-adviento/">24 días</a>
-        </div>
-        <div>
-          <h2>Sobre Adviento.es</h2>
-          <a href="../sobre-nosotros/">Quiénes somos</a>
-          <a href="../privacidad/">Privacidad</a>
-          <a href="../aviso-legal/">Aviso legal</a>
-        </div>
-      </div>
-      <div class="container footer-bottom">
-        <span>© 2026 Adviento.es</span>
-        <span>Este sitio puede contener enlaces de afiliación.</span>
-      </div>
-    </footer>
-    <script src="../assets/js/main.js" defer>
-    </script>
-    <script src="../assets/js/catalog.js" defer>
-    </script>
-  </body>
-</html>
+            <fieldset>
+              <legend>¿Para quién?</legend>
+              <label>
+                <input type="radio" name="audience" value="todos" checked>Cualquiera</label>
+                <label>
+                  <input type="radio" name="audience" value="ninos">Niños</label>
+                  <label>
+                    <input type="radio" name="audience" value="adultos">Adultos</label>
+                    <label>
+                      <input type="radio" name="audience" value="parejas">Parejas</label>
+                      <label>
+                        <input type="radio" name="audience" value="familias">Familias</label>
+                      <label><input type="radio" name="audience" value="perros">Perros</label>
+                      <label><input type="radio" name="audience" value="gatos">Gatos</label>
+                      </fieldset>
+                      <fieldset>
+                        <legend>¿Qué le gusta?</legend>
+                        <label>
+                          <input type="radio" name="category" value="todas" checked>Cualquier estilo</label>
+                          <label>
+                            <input type="radio" name="category" value="manualidades">Crear y hacer</label>
+                            <label>
+                              <input type="radio" name="category" value="belleza">Belleza y calma</label>
+                              <label>
+                                <input type="radio" name="category" value="gourmet">Comer y disfrutar</label>
+                                <label>
+                                  <input type="radio" name="category" value="juguetes">Jugar y construir</label>
+                                  <label>
+                                    <input type="radio" name="category" value="originales">Algo original</label>
+                                  <label><input type="radio" name="category" value="chocolate">Chocolate</label>
+                                  <label><input type="radio" name="category" value="mascotas">Mascotas</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <legend>Presupuesto máximo</legend>
+                                    <label>
+                                      <input type="radio" name="price" value="0" checked>Sin límite</label>
+                                      <label>
+                                        <input type="radio" name="price" value="20">Hasta 20 €</label>
+                                        <label>
+                                          <input type="radio" name="price" value="30">Hasta 30 €</label>
+                                          <label>
+                                            <input type="radio" name="price" value="50">Hasta 50 €</label>
+                                          </fieldset>
+                                        </aside>
+                                        <div class="results-area">
+                                          <div class="results-header">
+                                            <p id="results-count" aria-live="polite">Cargando calendarios…</p>
+                                            <label class="search-field">
+                                              <span class="sr-only">Buscar por nombre</span>
+                                              <input id="search-products" type="search" placeholder="Buscar…">
+                                            </label>
+                                          </div>
+                                          <div id="product-results" class="product-grid" aria-live="polite">
+                                          </div>
+                                          <p id="no-results" class="no-results" hidden>No hemos encontrado una combinación exacta. Prueba a quitar algún filtro.</p>
+                                          <noscript>
+                                            <p class="no-results">Activa JavaScript para utilizar los filtros. Explora las categorías de calendarios indicadas arriba.</p>
+                                          </noscript>
+                                        </div>
+                                      </div>
+                                    </section>
+                                  </main>
+                                  <footer class="site-footer">
+                                    <div class="container footer-grid">
+                                      <div>
+                                        <a class="brand brand-footer" href="../">
+                                          <span class="brand-mark">✦</span>
+                                          <span>adviento<span class="brand-dot">.</span>es</span>
+                                        </a>
+                                        <p>La magia empieza antes de Navidad.</p>
+                                      </div>
+                                      <div>
+                                        <h2>Descubre</h2>
+                                        <a href="../calendarios-de-adviento/">Calendarios</a>
+                                        <a href="../regalos-de-adviento/">Regalos</a>
+                                      </div>
+                                      <div>
+                                        <h2>Sobre Adviento.es</h2>
+                                        <a href="../sobre-nosotros/">Quiénes somos</a>                              
+                                        <a href="../privacidad/">Privacidad</a>
+                                        <a href="../aviso-legal/">Aviso legal</a>
+                                      </div>
+                                    </div>
+                                    <div class="container footer-bottom">
+                                      <span>© 2026 Adviento.es</span>
+                                      <span>Este sitio puede contener enlaces de afiliación.</span>
+                                    </div>
+                                  </footer>
+                                  <script src="../assets/js/main.js" defer>
+                                  </script>
+                                  <script src="../assets/js/finder.js" defer>
+                                  </script>
+                                </body>
+                              </html>
